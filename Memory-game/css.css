@@ -1,0 +1,77 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(236, 232, 232); 
+    color: rgb(215, 139, 40); 
+    font-size: 24px ;
+    height: 50px;
+    text-align: center; 
+}
+
+
+body{
+    height: 100vh;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    background-size: 100;
+    background: linear-gradient(rgb(247, 245, 245) ,rgb(70, 164, 201),rgb(214, 139, 40));
+}
+
+
+img{
+    width: 100px;
+}
+
+.game{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid transparent;
+    width: 640px;
+    height: 640px;
+    perspective: 1000px;
+}
+
+.card{
+    width: 25%;
+    height: 33.33%;
+    position: relative;
+    border: 2px solid rgb(71, 155, 211);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.frontface,.backface{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(122, 122, 71);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(241, 247, 241);
+    backface-visibility: hidden;
+
+
+}
+
+.frontface{
+    transform: rotateY(180deg);
+
+}
+
+/* //utility class */
+.card.flip{
+    transform: rotateY(180deg);
+}
